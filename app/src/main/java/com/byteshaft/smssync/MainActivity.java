@@ -7,13 +7,15 @@ import android.view.MenuItem;
 
 
 public class MainActivity extends ActionBarActivity {
+    Helpers helpers;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        helpers = new Helpers(this , MainActivity.this);
+        helpers.readSMS();
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
